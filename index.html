@@ -92,7 +92,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{
 /* ── 区块 ── */
 section{padding-block:34px; border-bottom:1px solid var(--rule-2)}
 section:last-of-type{border-bottom:0}
-.sec-h{display:flex; align-items:baseline; gap:10px; margin-bottom:20px}
+.sec-h{display:flex; align-items:baseline; gap:10px; margin-bottom:20px; flex-wrap:wrap}
 .sec-h h2{font-size:1.25rem; font-weight:700; letter-spacing:.08em}
 .sec-h .tag{font-size:.75rem; color:var(--ink-3); letter-spacing:.1em}
 
@@ -128,7 +128,7 @@ section:last-of-type{border-bottom:0}
   display:inline-flex; align-items:center; gap:7px; margin-bottom:18px;
   font-size:.8125rem; color:var(--ink-2); background:var(--surface-2);
   border:1px solid var(--rule-2); border-radius:7px; padding:5px 11px;
-  font-variant-numeric:tabular-nums;
+  font-variant-numeric:tabular-nums; line-height:1.5;
 }
 .wx::before{content:""; width:7px; height:7px; border-radius:50%; background:var(--azurite); flex:0 0 auto}
 .wx.rain::before{background:var(--ochre)}
@@ -138,7 +138,7 @@ section:last-of-type{border-bottom:0}
 .slot{display:grid; grid-template-columns:52px 1fr; gap:0 20px; padding-block:11px}
 .slot-label{
   font-size:.8125rem; color:var(--ink-3); letter-spacing:.06em;
-  text-align:right; padding-right:0; padding-top:2px;
+  text-align:right; padding-top:2px; font-variant-numeric:tabular-nums;
 }
 .slot-body{position:relative; padding-left:20px}
 .slot-body::before{
@@ -156,7 +156,7 @@ section:last-of-type{border-bottom:0}
 .lede{color:var(--ink-2); font-size:.9375rem}
 .facts{list-style:none; margin:14px 0 0; padding:0; display:grid; gap:8px}
 .facts li{display:grid; grid-template-columns:88px 1fr; gap:12px; font-size:.875rem}
-.facts dt, .facts .k{color:var(--ink-3); font-size:.8125rem; letter-spacing:.04em}
+.facts .k{color:var(--ink-3); font-size:.8125rem; letter-spacing:.04em}
 .facts .v{color:var(--ink); font-variant-numeric:tabular-nums}
 
 .tbl-wrap{overflow-x:auto; margin-top:14px; border:1px solid var(--rule-2); border-radius:9px}
@@ -171,6 +171,7 @@ td.p.hot{color:var(--ochre)}
 .callout{
   border-left:2px solid var(--ochre); background:var(--ochre-soft);
   padding:12px 15px; border-radius:0 8px 8px 0; font-size:.875rem; margin-top:14px;
+  line-height:1.7;
 }
 .callout.ok{border-left-color:var(--malachite); background:var(--malachite-soft)}
 .callout strong{font-weight:700}
@@ -179,8 +180,6 @@ td.p.hot{color:var(--ochre)}
   border-radius:999px; background:var(--azurite-soft); color:var(--azurite);
   font-variant-numeric:tabular-nums; font-weight:500;
 }
-.pill.warn{background:var(--ochre-soft); color:var(--ochre)}
-
 footer{padding-block:30px 0; color:var(--ink-3); font-size:.8125rem; line-height:1.8; text-align:center}
 @media (max-width:420px){
   .facts li{grid-template-columns:1fr; gap:2px}
@@ -213,7 +212,7 @@ footer{padding-block:30px 0; color:var(--ink-3); font-size:.8125rem; line-height
     <a href="#d1">10.16</a>
     <a href="#d2">10.17</a>
     <a href="#d3">10.18</a>
-    <a href="#dragon">金龙巡游</a>
+    <a href="#stay">住宿</a>
     <a href="#peak">葡萄峰林</a>
     <a href="#ref">实用信息</a>
   </nav>
@@ -222,9 +221,9 @@ footer{padding-block:30px 0; color:var(--ink-3); font-size:.8125rem; line-height
     <div class="sec-h"><h2>出发前待办</h2><span class="tag">点一下勾掉</span></div>
     <div class="todo">
       <label class="task"><input type="checkbox" id="t1"><div><span class="task-t">漓江竹筏漂流票</span><span class="task-n">提早买票。有不同路线可选，<strong>可以选不湿身</strong>的。</span></div></label>
-      <label class="task"><input type="checkbox" id="t2"><div><span class="task-t">荒野厘饭（漂亮饭）预订</span><span class="task-n">需提前预定，和 10/17 金龙巡游的时间排开。</span></div></label>
-      <label class="task"><input type="checkbox" id="t3"><div><span class="task-t">金龙巡游票</span><span class="task-n"><span class="due">当日 12:00 前截止下单</span>（部分平台 17:30）。先在「i游阳朔」小程序确认 10/17 是否有场次。</span></div></label>
-      <label class="task"><input type="checkbox" id="t4"><div><span class="task-t">约 10/18 日出的车</span><span class="task-n">前一晚跟司机定好 5:15 出发，<strong>留下电话</strong>。</span></div></label>
+      <label class="task"><input type="checkbox" id="t2"><div><span class="task-t">荒野厘饭（漂亮饭）预订</span><span class="task-n">需提前预定，这是 10/17 晚上的安排。</span></div></label>
+      <label class="task"><input type="checkbox" id="t3"><div><span class="task-t">约 10/18 看日出的车</span><span class="task-n">前一晚跟司机定好 <span class="due">05:15 出发</span>，<strong>留下电话</strong>。酒店在白沙镇，比县城离葡萄峰林近。</span></div></label>
+      <label class="task"><input type="checkbox" id="t4"><div><span class="task-t">约 10/18 傍晚去阳朔站的车</span><span class="task-n">酒店到阳朔站 <span class="due">40 公里、约 1 小时</span>。车 19:23 发，<strong>17:30 前必须出发</strong>。</span></div></label>
       <label class="task"><input type="checkbox" id="t5"><div><span class="task-t">随身带</span><span class="task-n">薄外套（河边风大）、驱蚊液（夜河蚊虫多）、雨衣、充电宝。</span></div></label>
     </div>
   </section>
@@ -236,17 +235,25 @@ footer{padding-block:30px 0; color:var(--ink-3); font-size:.8125rem; line-height
       <div class="day-head"><span class="day-num">第一日</span><span class="day-date num">10.16 周五</span></div>
       <p class="wx rain">22–33℃ · 少云转多云，上午可能短时阵雨，风小</p>
       <ul class="slots">
-        <li class="slot"><span class="slot-label">上午</span><div class="slot-body">
-          <p class="slot-t">抵达 · G3792</p>
-          <p class="slot-n">到阳朔后先放行李。今天节奏松，不用赶。</p>
+        <li class="slot"><span class="slot-label">09:07</span><div class="slot-body">
+          <p class="slot-t">珠海站发车 · G3792</p>
+          <p class="slot-n">二等座 261 元，全程 3 小时 9 分。</p>
+        </div></li>
+        <li class="slot"><span class="slot-label">12:16</span><div class="slot-body">
+          <p class="slot-t">抵达阳朔站</p>
+          <p class="slot-n"><span class="warn">是中午，不是上午。</span>阳朔站在<strong>兴坪镇</strong>，不在县城。到酒店约 40 公里、1 小时车程——高铁专线大巴 20 元/人 到县城再换车，或直接打车/网约车。</p>
+        </div></li>
+        <li class="slot"><span class="slot-label">13:30</span><div class="slot-body">
+          <p class="slot-t">到酒店放行李</p>
+          <p class="slot-n">自由鸟·觅野度假山舍，白沙镇旧县村，遇龙河畔。</p>
         </div></li>
         <li class="slot"><span class="slot-label">下午</span><div class="slot-body">
           <p class="slot-t">遇龙河兜风</p>
-          <p class="slot-n">租电瓶车沿河骑行，途经十里画廊等景点。<span class="warn">河边风大，注意保暖。</span></p>
+          <p class="slot-n">酒店就在遇龙河边（步行 5 分钟到夏棠寨码头），租电瓶车沿河骑行最顺。<span class="warn">河边风大，注意保暖。</span>十里画廊在县城以南，离酒店较远，看时间决定去不去，别硬赶。</p>
         </div></li>
         <li class="slot"><span class="slot-label">晚上</span><div class="slot-body">
           <p class="slot-t">西街</p>
-          <p class="slot-n">逛老街，买纪念品。今晚不安排巡游，安心逛。</p>
+          <p class="slot-n">距酒店约 15 分钟车程。买纪念品，吃点东西。</p>
         </div></li>
       </ul>
     </article>
@@ -255,17 +262,17 @@ footer{padding-block:30px 0; color:var(--ink-3); font-size:.8125rem; line-height
       <div class="day-head"><span class="day-num">第二日</span><span class="day-date num">10.17 周六</span></div>
       <p class="wx rain">22–29℃ · 上午局部雷雨，风稍大</p>
       <ul class="slots">
-        <li class="slot"><span class="slot-label">早上</span><div class="slot-body">
-          <p class="slot-t">漓江竹筏漂流</p>
-          <p class="slot-n">提早买票。可选不湿身的路线。<span class="warn">上午的雷雨是唯一会打断它的东西——带雨衣，或把它排在雨前。</span></p>
+        <li class="slot"><span class="slot-label">07:00</span><div class="slot-body">
+          <p class="slot-t">出发去兴坪 · 漓江竹筏漂流</p>
+          <p class="slot-n"><span class="warn">酒店在旧县村，到兴坪约 34 公里、1 小时车程</span>，是这三天最长的一段路。想赶早场竹筏就得 7 点前出门。提早买票，可选不湿身路线；上午的雷雨是唯一会打断它的东西，带雨衣。</p>
         </div></li>
         <li class="slot"><span class="slot-label">下午</span><div class="slot-body">
           <p class="slot-t">漓江 20 元景区</p>
-          <p class="slot-n">景区免费，走走逛逛，拍那张 20 元背面的同款山水。<span class="warn">下午务必 16:30 前离开</span>——兴坪到遇龙桥 33–36 公里，要绕回阳朔县城再往白沙镇，车程约 1 小时，晚了赶不上巡游入场。</p>
+          <p class="slot-n">就在兴坪，景区免费。走走逛逛，拍那张 20 元背面的同款山水。今天不用赶时间，慢慢待。</p>
         </div></li>
         <li class="slot"><span class="slot-label">晚上</span><div class="slot-body">
-          <p class="slot-t">金龙巡游 18:30 → 荒野厘饭</p>
-          <p class="slot-n">从兴坪直接过来，<span class="warn">17:30 前须抵达遇龙桥</span>（17:30 起清场）。巡游约 19:30 结束，之后再去吃荒野厘饭——所以订位要订晚场，或者改成看完再吃。</p>
+          <p class="slot-t">荒野厘饭（漂亮饭）</p>
+          <p class="slot-n">需提前预定。兴坪回县城约 25 公里、40 分钟，吃完再回酒店 15 分钟。时间宽裕，不用掐着点。</p>
         </div></li>
       </ul>
     </article>
@@ -276,11 +283,11 @@ footer{padding-block:30px 0; color:var(--ink-3); font-size:.8125rem; line-height
       <ul class="slots">
         <li class="slot"><span class="slot-label">05:15</span><div class="slot-body">
           <p class="slot-t">出发去葡萄峰林</p>
-          <p class="slot-n">西街到观景台 40 分钟车程，<span class="warn">6:00 前登顶</span>才赶得上日出。别骑电瓶车，打车或包车。</p>
+          <p class="slot-n">从酒店（白沙镇）出发比从西街近，约 20 公里、30 分钟（估算）。<span class="warn">6:00 前登顶</span>才赶得上日出。别骑电瓶车，打车或包车。</p>
         </div></li>
         <li class="slot"><span class="slot-label">06:00–08:00</span><div class="slot-body">
           <p class="slot-t">千里江山图观景台 · 日出与云海</p>
-          <p class="slot-n">这是当天的黄金档：日出加晨雾。8:30 下山。</p>
+          <p class="slot-n">日出 06:37。这是当天的黄金档：日出加晨雾。8:30 下山。</p>
         </div></li>
         <li class="slot"><span class="slot-label">上午</span><div class="slot-body">
           <p class="slot-t">回酒店 · 早午饭 · 拍照</p>
@@ -288,55 +295,39 @@ footer{padding-block:30px 0; color:var(--ink-3); font-size:.8125rem; line-height
         </div></li>
         <li class="slot"><span class="slot-label">14:00</span><div class="slot-body">
           <p class="slot-t">退房</p>
-          <p class="slot-n">行李可先寄存，方便下午继续逛。</p>
+          <p class="slot-n">行李寄存在酒店，下午轻松逛。</p>
         </div></li>
         <li class="slot"><span class="slot-label">下午</span><div class="slot-body">
           <p class="slot-t">咖啡馆拍照 · 买特产</p>
           <p class="slot-n">买些能带上高铁的特色吃食。</p>
         </div></li>
-        <li class="slot"><span class="slot-label">晚上</span><div class="slot-body">
-          <p class="slot-t">回珠海 · D1899</p>
-          <p class="slot-n">留足去车站的时间。</p>
+        <li class="slot"><span class="slot-label">17:30</span><div class="slot-body">
+          <p class="slot-t">出发去阳朔站</p>
+          <p class="slot-n"><span class="warn">酒店到站 40 公里、约 1 小时</span>，回兴坪方向。这是全程最不能迟到的一段——高铁不等人。宁可早到。</p>
+        </div></li>
+        <li class="slot"><span class="slot-label">19:23</span><div class="slot-body">
+          <p class="slot-t">阳朔站发车 · D1899</p>
+          <p class="slot-n">二等座 234 元。<span class="num">22:56</span> 抵达珠海站。</p>
         </div></li>
       </ul>
     </article>
   </section>
 
-  <section id="dragon">
-    <div class="sec-h"><h2>金龙巡游</h2><span class="tag">10/17 场</span></div>
-    <div class="callout">
-      <strong>先确认场次。</strong>能查到确切排期的只有国庆 10/1–7；10/8 之后没有公开场次表。出发前用微信小程序 <strong>「i游阳朔」</strong>（首页「金龙巡游」专区，每月初更新）确认，或打景区电话 <strong class="num">0773-8881177</strong> 问即时场次。大雨、暴雨大概率临时停演。
-    </div>
-    <div class="card" style="margin-top:14px">
-      <h3>时间与地点</h3>
+  <section id="stay">
+    <div class="sec-h"><h2>住宿</h2><span class="tag">白沙镇 · 遇龙河畔</span></div>
+    <div class="card">
+      <h3>自由鸟 · 觅野度假山舍</h3>
+      <p class="lede">全称「自由鸟·觅野度假山舍（阳朔遇龙河景区旧县码头店）」，2025 年开业，约 48 间客房，免费停车。</p>
       <ul class="facts">
-        <li><span class="k">地点</span><span class="v">白沙镇遇龙桥码头（遇龙村）</span></li>
-        <li><span class="k">开场</span><span class="v">约 18:30，18:00 可入场占位，时长 50–60 分钟</span></li>
-        <li><span class="k">抵达</span><span class="v">建议 17:30 前到，遇龙桥 17:30 左右开始清场</span></li>
-        <li><span class="k">购票</span><span class="v">「i游阳朔」小程序 / 抖音「金龙巡游」</span></li>
-        <li><span class="k">截止</span><span class="v">当日 12:00 前（部分平台 17:30）</span></li>
-        <li><span class="k">开游条件</span><span class="v"><span class="warn">历史上要求当天售出约 50 个竹筏（约 100 人）才开演</span>，人不够会取消</span></li>
+        <li><span class="k">地址</span><span class="v">阳朔县白沙镇旧县村委大石寨村 83-1 号</span></li>
+        <li><span class="k">位置</span><span class="v">遇龙河畔，背靠凤冠山，临近旧县码头</span></li>
+        <li><span class="k">步行</span><span class="v">约 5 分钟到夏棠寨码头，8–10 分钟到旧县综合码头</span></li>
+        <li><span class="k">到西街</span><span class="v">约 15 分钟车程</span></li>
+        <li><span class="k">到阳朔站</span><span class="v"><span class="warn">约 40 公里 / 60 分钟</span></span></li>
       </ul>
     </div>
-    <div class="card">
-      <h3>观景位怎么选</h3>
-      <div class="tbl-wrap">
-        <table>
-          <thead><tr><th>位置</th><th>价格</th><th>说明</th></tr></thead>
-          <tbody>
-            <tr><td>桥上观景台</td><td class="p hot">108/人</td><td>C 位，限量 60–80 张，最抢手</td></tr>
-            <tr><td>竹筏 · 金龙前排</td><td class="p">518/2人</td><td>仅前 5 艘</td></tr>
-            <tr><td>竹筏 · 贵宾龙身段</td><td class="p">358/2人</td><td>近距离看龙身</td></tr>
-            <tr><td>竹筏 · 至尊龙头位</td><td class="p">1688/2人</td><td>最前方，直面烟花</td></tr>
-            <tr><td>居民楼顶 / 餐厅露台</td><td class="p">40–148/人</td><td>桥头有本地人揽客，先到先得</td></tr>
-            <tr><td>两岸步道</td><td class="p free">免费</td><td>视角低，只能看到局部</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="lede" style="margin-top:12px">两个人最划算的是 <strong>桥上观景台 216 元</strong>（若抢得到）或 <strong>贵宾龙身段竹筏 358 元</strong>。竹筏禁止孕妇、70 岁以上及心脏病、高血压患者乘坐。</p>
-    </div>
-    <div class="callout" style="margin-top:14px">
-      <strong>赶车提醒。</strong>遇龙桥距阳朔高铁站 44 公里，车程 50–60 分钟。若看完巡游当天就走，车票要买 <strong class="num">20:30</strong> 以后的。你的 D1899 是 10/18，所以这一天不受影响。
+    <div class="callout ok">
+      <strong>酒店位置其实是好事。</strong>它不在县城，所以避开了西街的吵。而且它就在遇龙河边——第一天的骑行、第三天的清晨，都不用奔波。代价是每天出门都要算车程，尤其是赶高铁那天。
     </div>
   </section>
 
@@ -347,10 +338,10 @@ footer{padding-block:30px 0; color:var(--ink-3); font-size:.8125rem; line-height
       <h3>要点</h3>
       <ul class="facts">
         <li><span class="k">门票</span><span class="v">免费 · 停车约 10 元</span></li>
-        <li><span class="k">距离</span><span class="v">阳朔县城 27km / 约 30 分钟；西街约 40 分钟</span></li>
+        <li><span class="k">距离</span><span class="v">从酒店（白沙镇）约 20 公里 / 30 分钟；从阳朔县城 27 公里 / 30 分钟，西街约 40 分钟</span></li>
         <li><span class="k">登顶</span><span class="v">自驾可到山顶附近，步行 3–10 分钟</span></li>
-        <li><span class="k">黄金档</span><span class="v">6:00–8:00 云海晨雾，日出 06:36</span></li>
-        <li><span class="k">打法</span><span class="v">5:15–5:30 出发 → 6:00 前登顶 → 8:30 下山</span></li>
+        <li><span class="k">黄金档</span><span class="v">6:00–8:00 云海晨雾，日出 06:37</span></li>
+        <li><span class="k">打法</span><span class="v">05:15 出发 → 6:00 前登顶 → 8:30 下山</span></li>
       </ul>
     </div>
     <div class="card">
@@ -366,16 +357,16 @@ footer{padding-block:30px 0; color:var(--ink-3); font-size:.8125rem; line-height
         </table>
       </div>
       <div class="callout" style="margin-top:14px">
-        <strong>别骑电瓶车。</strong>27 公里山路，后半段村道窄、无护栏，出发时天还没亮。打车或包车。山路蜿蜒，新手司机慎行；旺季可能要换乘接驳车。
+        <strong>别骑电瓶车。</strong>山路窄，后半段村道无护栏，出发时天还没亮。打车或包车。山路蜿蜒，新手司机慎行；旺季可能要换乘接驳车。
       </div>
     </div>
     <div class="card">
       <h3>备选：相公山</h3>
-      <p class="lede">若更想要经典的日出云海，<strong>相公山</strong>是传统日出机位，距千里江山图约 10 公里，海拔 230 米，收费。西街拼车 <span class="num">50/人</span>往返；两处一起包车 <span class="num">260</span> 起。葡萄镇的民宿距相公山 14km、距夕阳山观景台 5km。</p>
+      <p class="lede">若更想要经典的日出云海，<strong>相公山</strong>是传统日出机位，距千里江山图约 10 公里，海拔 230 米，收费。西街拼车 <span class="num">50/人</span>往返；两处一起包车 <span class="num">260</span> 起。</p>
     </div>
     <div class="card">
       <h3>带上这些</h3>
-      <p class="lede">三脚架、广角或长焦、薄外套、防滑鞋、手电筒、驱蚊液。山上小卖部可充电（约 5 元/次），电动车停车约 2 元。</p>
+      <p class="lede">三脚架、广角或长焦、薄外套、防滑鞋、手电筒、驱蚊液。山上小卖部可充电（约 5 元/次）。</p>
     </div>
   </section>
 
@@ -396,29 +387,30 @@ footer{padding-block:30px 0; color:var(--ink-3); font-size:.8125rem; line-height
       <p class="lede" style="margin-top:12px">各平台预报分歧不小：16 日从「少云」到「小雨」，18 日从「少云」到「小雨」。湿度 90% 以上，体感偏高。出门前以临近的官方预报为准。</p>
     </div>
     <div class="card">
-      <h3>电话</h3>
+      <h3>车次</h3>
       <ul class="facts">
-        <li><span class="k">金龙巡游</span><span class="v num">0773-8881177</span><span style="color:var(--ink-3);font-size:.8125rem">（场次与是否开演）</span></li>
+        <li><span class="k">去程</span><span class="v">G3792 · 珠海 09:07 → 阳朔 12:16 · 二等座 261</span></li>
+        <li><span class="k">返程</span><span class="v">D1899 · 阳朔 19:23 → 珠海 22:56 · 二等座 234</span></li>
       </ul>
+      <p class="lede" style="margin-top:12px">时刻与票价以 12306 为准，出行前再核一次。</p>
     </div>
-    <div class="callout" style="margin-top:14px">
+    <div class="callout">
       <strong>两个会打乱计划的风险，出发前各确认一次。</strong>
       <br>① <strong>10/17 上午的雷雨</strong>可能让竹筏停发。票已买的话，当天早上问一次是否发船，能改期就往后挪。
       <br>② <strong>10/18 清晨可能下雨</strong>（中央气象台给小雨），日出和云海会整个泡汤。前一晚看预报，不行就睡到自然醒，改为酒店慢享 + 咖啡馆，行程照样成立。
-      <br>③ 另外别忘了金龙巡游有<strong>开游人数门槛</strong>，当天中午前在小程序确认场次是否照常。
     </div>
   </section>
 
   <footer>
     阳朔 · 2026.10.16–10.18<br>
-    天气与票价来自公开信息，出行前请以官方最新公告为准。
+    天气、票价与车次来自公开信息，出行前请以官方最新公告为准。
   </footer>
 </div>
 
 <script>
 (function () {
   var tasks = document.querySelectorAll('.task input[type="checkbox"]');
-  var KEY = 'yangshuo-tasks-v1';
+  var KEY = 'yangshuo-tasks-v2';
   function load() {
     try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { return {}; }
   }
