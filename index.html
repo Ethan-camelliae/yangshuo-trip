@@ -1,0 +1,434 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>阳朔三日</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap">
+<style>
+/* 设计：手卷式单栏 —— 青绿山水配色（石青/石绿/赭石），宋体题头 + 黑体正文，三日为册页 */
+:root{
+  --ground:#EFF3F0; --surface:#FFFFFF; --surface-2:#F7FAF8;
+  --ink:#16262A; --ink-2:#4A6167; --ink-3:#7B9095;
+  --rule:#D2DCD7; --rule-2:#E6ECE8;
+  --azurite:#1C5F76; --malachite:#4F8A5C; --ochre:#A85B2E;
+  --azurite-soft:#DCEAF0; --malachite-soft:#E2EFE4; --ochre-soft:#F7E8DC;
+  --shadow:0 1px 2px rgba(22,38,42,.05), 0 10px 28px -20px rgba(22,38,42,.45);
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme: dark;
+    --ground:#0D1618; --surface:#141F21; --surface-2:#182427;
+    --ink:#E6EDEA; --ink-2:#A9BCBC; --ink-3:#7A8F92;
+    --rule:#2A3A3C; --rule-2:#1F2E30;
+    --azurite:#74BDD1; --malachite:#8CC28F; --ochre:#E09A66;
+    --azurite-soft:#12313A; --malachite-soft:#162C1B; --ochre-soft:#33231A;
+    --shadow:0 1px 2px rgba(0,0,0,.5), 0 10px 28px -20px rgba(0,0,0,.9);
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme: dark;
+  --ground:#0D1618; --surface:#141F21; --surface-2:#182427;
+  --ink:#E6EDEA; --ink-2:#A9BCBC; --ink-3:#7A8F92;
+  --rule:#2A3A3C; --rule-2:#1F2E30;
+  --azurite:#74BDD1; --malachite:#8CC28F; --ochre:#E09A66;
+  --azurite-soft:#12313A; --malachite-soft:#162C1B; --ochre-soft:#33231A;
+  --shadow:0 1px 2px rgba(0,0,0,.5), 0 10px 28px -20px rgba(0,0,0,.9);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--ground); color:var(--ink);
+  font-family:"Noto Sans SC",-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  font-size:16px; line-height:1.75; -webkit-font-smoothing:antialiased;
+}
+.page{max-width:760px; margin-inline:auto; padding-inline:20px; padding-block:0 56px}
+h1,h2,h3{font-family:"Noto Serif SC",Georgia,"Songti SC",serif; text-wrap:balance; margin:0; letter-spacing:.02em}
+p{margin:0}
+a{color:var(--azurite)}
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{
+  outline:2px solid var(--azurite); outline-offset:2px; border-radius:3px;
+}
+.num{font-variant-numeric:tabular-nums}
+
+/* ── 题头 ── */
+.cover{padding-block:44px 30px; border-bottom:1px solid var(--rule)}
+.eyebrow{
+  font-size:.8125rem; letter-spacing:.16em; color:var(--ink-3);
+  text-transform:uppercase; font-variant-numeric:tabular-nums;
+}
+.cover h1{
+  font-size:clamp(2.6rem,13vw,3.6rem); font-weight:700;
+  letter-spacing:.14em; line-height:1.1; margin-block:18px 10px;
+}
+.cover .sub{color:var(--ink-2); font-size:.9375rem; letter-spacing:.06em}
+.sunbar{margin-top:26px}
+.sunbar-track{
+  height:5px; border-radius:3px;
+  background:linear-gradient(90deg,var(--ochre),var(--azurite) 52%,var(--ochre));
+}
+.sunbar-ends{
+  display:flex; justify-content:space-between; margin-top:9px;
+  font-size:.8125rem; color:var(--ink-2); font-variant-numeric:tabular-nums;
+}
+
+/* ── 导航 ── */
+.nav{
+  position:sticky; top:env(safe-area-inset-top,0px); z-index:10;
+  display:flex; gap:6px; overflow-x:auto; scrollbar-width:none;
+  padding-block:10px; margin-inline:-20px; padding-inline:20px;
+  background:color-mix(in srgb, var(--ground) 88%, transparent);
+  backdrop-filter:blur(10px); border-bottom:1px solid var(--rule-2);
+}
+.nav::-webkit-scrollbar{display:none}
+.nav a{
+  flex:0 0 auto; padding:5px 12px; border-radius:999px;
+  font-size:.8125rem; text-decoration:none; color:var(--ink-2);
+  border:1px solid var(--rule); white-space:nowrap;
+}
+.nav a:hover{color:var(--azurite); border-color:var(--azurite)}
+
+/* ── 区块 ── */
+section{padding-block:34px; border-bottom:1px solid var(--rule-2)}
+section:last-of-type{border-bottom:0}
+.sec-h{display:flex; align-items:baseline; gap:10px; margin-bottom:20px}
+.sec-h h2{font-size:1.25rem; font-weight:700; letter-spacing:.08em}
+.sec-h .tag{font-size:.75rem; color:var(--ink-3); letter-spacing:.1em}
+
+/* ── 待办 ── */
+.todo{background:var(--surface); border:1px solid var(--rule); border-radius:12px; box-shadow:var(--shadow); overflow:hidden}
+.task{display:flex; gap:12px; align-items:flex-start; padding:14px 16px; border-bottom:1px solid var(--rule-2); cursor:pointer}
+.task:last-child{border-bottom:0}
+.task input{
+  appearance:none; -webkit-appearance:none; flex:0 0 auto;
+  width:19px; height:19px; margin:4px 0 0; border:1.5px solid var(--ink-3);
+  border-radius:5px; background:transparent; cursor:pointer; position:relative;
+}
+.task input:checked{background:var(--azurite); border-color:var(--azurite)}
+.task input:checked::after{
+  content:""; position:absolute; left:5.5px; top:2px; width:5px; height:9px;
+  border:solid var(--ground); border-width:0 2px 2px 0; transform:rotate(45deg);
+}
+.task:has(input:checked) .task-t{color:var(--ink-3)}
+.task:has(input:checked) .task-t::after{content:""; position:absolute; left:0; right:0; top:50%; border-top:1px solid var(--ink-3)}
+.task-t{position:relative; display:inline-block}
+.task > div{flex:1; min-width:0}
+.task-t{font-weight:500}
+.task-n{display:block; font-size:.8125rem; color:var(--ink-2); line-height:1.6; margin-top:3px}
+.due{color:var(--ochre); font-weight:500}
+
+/* ── 三日 ── */
+.day{padding-block:8px 26px}
+.day:last-child{padding-bottom:0}
+.day-head{display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; margin-bottom:4px}
+.day-num{font-family:"Noto Serif SC",serif; font-size:1.5rem; font-weight:700; letter-spacing:.1em}
+.day-date{font-size:.875rem; color:var(--ink-2); font-variant-numeric:tabular-nums; letter-spacing:.06em}
+.wx{
+  display:inline-flex; align-items:center; gap:7px; margin-bottom:18px;
+  font-size:.8125rem; color:var(--ink-2); background:var(--surface-2);
+  border:1px solid var(--rule-2); border-radius:7px; padding:5px 11px;
+  font-variant-numeric:tabular-nums;
+}
+.wx::before{content:""; width:7px; height:7px; border-radius:50%; background:var(--azurite); flex:0 0 auto}
+.wx.rain::before{background:var(--ochre)}
+
+.slots{list-style:none; margin:0; padding:0; position:relative}
+.slots::before{content:""; position:absolute; left:52px; top:6px; bottom:6px; width:1px; background:var(--rule)}
+.slot{display:grid; grid-template-columns:52px 1fr; gap:0 20px; padding-block:11px}
+.slot-label{
+  font-size:.8125rem; color:var(--ink-3); letter-spacing:.06em;
+  text-align:right; padding-right:0; padding-top:2px;
+}
+.slot-body{position:relative; padding-left:20px}
+.slot-body::before{
+  content:""; position:absolute; left:-4.5px; top:11px; width:8px; height:8px;
+  border-radius:50%; background:var(--ground); border:1.5px solid var(--azurite); box-sizing:border-box;
+}
+.slot-t{font-weight:500}
+.slot-n{font-size:.8125rem; color:var(--ink-2); line-height:1.65; margin-top:3px}
+.warn{color:var(--ochre)}
+
+/* ── 通用卡片 / 表 ── */
+.card{background:var(--surface); border:1px solid var(--rule); border-radius:12px; padding:18px; box-shadow:var(--shadow)}
+.card + .card{margin-top:14px}
+.card h3{font-size:1rem; letter-spacing:.06em; margin-bottom:10px}
+.lede{color:var(--ink-2); font-size:.9375rem}
+.facts{list-style:none; margin:14px 0 0; padding:0; display:grid; gap:8px}
+.facts li{display:grid; grid-template-columns:88px 1fr; gap:12px; font-size:.875rem}
+.facts dt, .facts .k{color:var(--ink-3); font-size:.8125rem; letter-spacing:.04em}
+.facts .v{color:var(--ink); font-variant-numeric:tabular-nums}
+
+.tbl-wrap{overflow-x:auto; margin-top:14px; border:1px solid var(--rule-2); border-radius:9px}
+table{border-collapse:collapse; width:100%; font-size:.875rem; min-width:340px}
+th,td{text-align:left; padding:9px 13px; border-bottom:1px solid var(--rule-2)}
+th{font-size:.75rem; color:var(--ink-3); letter-spacing:.08em; font-weight:500; background:var(--surface-2)}
+tr:last-child td{border-bottom:0}
+td.p{font-variant-numeric:tabular-nums; white-space:nowrap; font-weight:500}
+td.p.free{color:var(--malachite)}
+td.p.hot{color:var(--ochre)}
+
+.callout{
+  border-left:2px solid var(--ochre); background:var(--ochre-soft);
+  padding:12px 15px; border-radius:0 8px 8px 0; font-size:.875rem; margin-top:14px;
+}
+.callout.ok{border-left-color:var(--malachite); background:var(--malachite-soft)}
+.callout strong{font-weight:700}
+.pill{
+  display:inline-block; font-size:.75rem; letter-spacing:.06em; padding:2px 9px;
+  border-radius:999px; background:var(--azurite-soft); color:var(--azurite);
+  font-variant-numeric:tabular-nums; font-weight:500;
+}
+.pill.warn{background:var(--ochre-soft); color:var(--ochre)}
+
+footer{padding-block:30px 0; color:var(--ink-3); font-size:.8125rem; line-height:1.8; text-align:center}
+@media (max-width:420px){
+  .facts li{grid-template-columns:1fr; gap:2px}
+  .slots::before{left:0}
+  .slot{grid-template-columns:1fr; gap:0}
+  .slot-label{text-align:left; padding-bottom:4px}
+  .slot-body{padding-left:20px}
+  .slot-body::before{left:-4.5px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none !important; animation:none !important}}
+</style>
+
+<div class="page">
+
+  <header class="cover">
+    <p class="eyebrow num">2026.10.16 — 10.18 · 两人同行</p>
+    <h1>阳朔三日</h1>
+    <p class="sub">遇龙河 · 漓江 · 葡萄峰林</p>
+    <div class="sunbar">
+      <div class="sunbar-track"></div>
+      <div class="sunbar-ends">
+        <span>日出 06:36</span>
+        <span>日落 18:11</span>
+      </div>
+    </div>
+  </header>
+
+  <nav class="nav">
+    <a href="#todo">出发前待办</a>
+    <a href="#d1">10.16</a>
+    <a href="#d2">10.17</a>
+    <a href="#d3">10.18</a>
+    <a href="#dragon">金龙巡游</a>
+    <a href="#peak">葡萄峰林</a>
+    <a href="#ref">实用信息</a>
+  </nav>
+
+  <section id="todo">
+    <div class="sec-h"><h2>出发前待办</h2><span class="tag">点一下勾掉</span></div>
+    <div class="todo">
+      <label class="task"><input type="checkbox" id="t1"><div><span class="task-t">漓江竹筏漂流票</span><span class="task-n">提早买票。有不同路线可选，<strong>可以选不湿身</strong>的。</span></div></label>
+      <label class="task"><input type="checkbox" id="t2"><div><span class="task-t">荒野厘饭（漂亮饭）预订</span><span class="task-n">需提前预定，和 10/17 金龙巡游的时间排开。</span></div></label>
+      <label class="task"><input type="checkbox" id="t3"><div><span class="task-t">金龙巡游票</span><span class="task-n"><span class="due">当日 12:00 前截止下单</span>（部分平台 17:30）。先在「i游阳朔」小程序确认 10/17 是否有场次。</span></div></label>
+      <label class="task"><input type="checkbox" id="t4"><div><span class="task-t">约 10/18 日出的车</span><span class="task-n">前一晚跟司机定好 5:15 出发，<strong>留下电话</strong>。</span></div></label>
+      <label class="task"><input type="checkbox" id="t5"><div><span class="task-t">随身带</span><span class="task-n">薄外套（河边风大）、驱蚊液（夜河蚊虫多）、雨衣、充电宝。</span></div></label>
+    </div>
+  </section>
+
+  <section id="d1">
+    <div class="sec-h"><h2>三日行程</h2></div>
+
+    <article class="day">
+      <div class="day-head"><span class="day-num">第一日</span><span class="day-date num">10.16 周五</span></div>
+      <p class="wx rain">22–33℃ · 少云转多云，上午可能短时阵雨，风小</p>
+      <ul class="slots">
+        <li class="slot"><span class="slot-label">上午</span><div class="slot-body">
+          <p class="slot-t">抵达 · G3792</p>
+          <p class="slot-n">到阳朔后先放行李。今天节奏松，不用赶。</p>
+        </div></li>
+        <li class="slot"><span class="slot-label">下午</span><div class="slot-body">
+          <p class="slot-t">遇龙河兜风</p>
+          <p class="slot-n">租电瓶车沿河骑行，途经十里画廊等景点。<span class="warn">河边风大，注意保暖。</span></p>
+        </div></li>
+        <li class="slot"><span class="slot-label">晚上</span><div class="slot-body">
+          <p class="slot-t">西街</p>
+          <p class="slot-n">逛老街，买纪念品。今晚不安排巡游，安心逛。</p>
+        </div></li>
+      </ul>
+    </article>
+
+    <article class="day">
+      <div class="day-head"><span class="day-num">第二日</span><span class="day-date num">10.17 周六</span></div>
+      <p class="wx rain">22–29℃ · 上午局部雷雨，风稍大</p>
+      <ul class="slots">
+        <li class="slot"><span class="slot-label">早上</span><div class="slot-body">
+          <p class="slot-t">漓江竹筏漂流</p>
+          <p class="slot-n">提早买票。可选不湿身的路线。<span class="warn">上午的雷雨是唯一会打断它的东西——带雨衣，或把它排在雨前。</span></p>
+        </div></li>
+        <li class="slot"><span class="slot-label">下午</span><div class="slot-body">
+          <p class="slot-t">漓江 20 元景区</p>
+          <p class="slot-n">景区免费，走走逛逛，拍那张 20 元背面的同款山水。</p>
+        </div></li>
+        <li class="slot"><span class="slot-label">晚上</span><div class="slot-body">
+          <p class="slot-t">金龙巡游 18:30 → 荒野厘饭</p>
+          <p class="slot-n">两者要排开：要么 17:30 前吃完再看巡游，要么看完巡游（约 19:30 结束）再去吃。巡游 <span class="warn">17:30 前须抵达遇龙桥</span>。</p>
+        </div></li>
+      </ul>
+    </article>
+
+    <article class="day">
+      <div class="day-head"><span class="day-num">第三日</span><span class="day-date num">10.18 周日</span></div>
+      <p class="wx">21–32℃ · 少云，可能阵雨</p>
+      <ul class="slots">
+        <li class="slot"><span class="slot-label">05:15</span><div class="slot-body">
+          <p class="slot-t">出发去葡萄峰林</p>
+          <p class="slot-n">西街到观景台 40 分钟车程，<span class="warn">6:00 前登顶</span>才赶得上日出。别骑电瓶车，打车或包车。</p>
+        </div></li>
+        <li class="slot"><span class="slot-label">06:00–08:00</span><div class="slot-body">
+          <p class="slot-t">千里江山图观景台 · 日出与云海</p>
+          <p class="slot-n">这是当天的黄金档：日出加晨雾。8:30 下山。</p>
+        </div></li>
+        <li class="slot"><span class="slot-label">上午</span><div class="slot-body">
+          <p class="slot-t">回酒店 · 早午饭 · 拍照</p>
+          <p class="slot-n">约 9:30 回到酒店。这半天就是用来慢下来的。</p>
+        </div></li>
+        <li class="slot"><span class="slot-label">14:00</span><div class="slot-body">
+          <p class="slot-t">退房</p>
+          <p class="slot-n">行李可先寄存，方便下午继续逛。</p>
+        </div></li>
+        <li class="slot"><span class="slot-label">下午</span><div class="slot-body">
+          <p class="slot-t">咖啡馆拍照 · 买特产</p>
+          <p class="slot-n">买些能带上高铁的特色吃食。</p>
+        </div></li>
+        <li class="slot"><span class="slot-label">晚上</span><div class="slot-body">
+          <p class="slot-t">回珠海 · D1899</p>
+          <p class="slot-n">留足去车站的时间。</p>
+        </div></li>
+      </ul>
+    </article>
+  </section>
+
+  <section id="dragon">
+    <div class="sec-h"><h2>金龙巡游</h2><span class="tag">10/17 场</span></div>
+    <div class="callout">
+      <strong>先确认场次。</strong>能查到确切排期的只有国庆 10/1–7；10/8 之后没有公开场次表。出发前用微信小程序 <strong>「i游阳朔」</strong>（首页「金龙巡游」专区，每月初更新）确认，或打景区电话 <strong class="num">0773-8881177</strong> 问即时场次。大雨、暴雨大概率临时停演。
+    </div>
+    <div class="card" style="margin-top:14px">
+      <h3>时间与地点</h3>
+      <ul class="facts">
+        <li><span class="k">地点</span><span class="v">白沙镇遇龙桥码头（遇龙村）</span></li>
+        <li><span class="k">开场</span><span class="v">约 18:30，18:00 可入场占位，时长 50–60 分钟</span></li>
+        <li><span class="k">抵达</span><span class="v">建议 17:30 前到，遇龙桥 17:30 左右开始清场</span></li>
+        <li><span class="k">购票</span><span class="v">「i游阳朔」小程序 / 抖音「金龙巡游」</span></li>
+        <li><span class="k">截止</span><span class="v">当日 12:00 前（部分平台 17:30）</span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>观景位怎么选</h3>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>位置</th><th>价格</th><th>说明</th></tr></thead>
+          <tbody>
+            <tr><td>桥上观景台</td><td class="p hot">108/人</td><td>C 位，限量 60–80 张，最抢手</td></tr>
+            <tr><td>竹筏 · 金龙前排</td><td class="p">518/2人</td><td>仅前 5 艘</td></tr>
+            <tr><td>竹筏 · 贵宾龙身段</td><td class="p">358/2人</td><td>近距离看龙身</td></tr>
+            <tr><td>竹筏 · 至尊龙头位</td><td class="p">1688/2人</td><td>最前方，直面烟花</td></tr>
+            <tr><td>居民楼顶 / 餐厅露台</td><td class="p">40–128/人</td><td>桥头有本地人揽客，先到先得</td></tr>
+            <tr><td>两岸步道</td><td class="p free">免费</td><td>视角低，只能看到局部</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="lede" style="margin-top:12px">两个人最划算的是 <strong>桥上观景台 216 元</strong>（若抢得到）或 <strong>贵宾龙身段竹筏 358 元</strong>。孕妇、70 岁以上不能上竹筏。</p>
+    </div>
+    <div class="callout" style="margin-top:14px">
+      <strong>赶车提醒。</strong>遇龙桥距阳朔高铁站 44 公里，车程 50–60 分钟。若看完巡游当天就走，车票要买 <strong class="num">20:30</strong> 以后的。你的 D1899 是 10/18，所以这一天不受影响。
+    </div>
+  </section>
+
+  <section id="peak">
+    <div class="sec-h"><h2>葡萄峰林</h2><span class="tag">10/18 日出</span></div>
+    <p class="lede">千里江山图观景台，在葡萄镇杨梅岭村。看完日出再去别处是来不及的——<strong>晨雾的黄金档 6:00–8:00 就在这里</strong>，你在别处看完再赶过去，雾已经散了。所以就在这儿看。</p>
+    <div class="card" style="margin-top:14px">
+      <h3>要点</h3>
+      <ul class="facts">
+        <li><span class="k">门票</span><span class="v">免费 · 停车约 10 元</span></li>
+        <li><span class="k">距离</span><span class="v">阳朔县城 27km / 约 30 分钟；西街约 40 分钟</span></li>
+        <li><span class="k">登顶</span><span class="v">自驾可到山顶附近，步行 3–10 分钟</span></li>
+        <li><span class="k">黄金档</span><span class="v">6:00–8:00 云海晨雾，日出 06:36</span></li>
+        <li><span class="k">打法</span><span class="v">5:15–5:30 出发 → 6:00 前登顶 → 8:30 下山</span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>怎么去</h3>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>方式</th><th>价格</th><th>说明</th></tr></thead>
+          <tbody>
+            <tr><td>西街拼车</td><td class="p">约 20/人</td><td>最省，前一晚约好</td></tr>
+            <tr><td>打车县城往返</td><td class="p">约 50</td><td>需和司机约返程</td></tr>
+            <tr><td>包车往返（5 座）</td><td class="p">180 起</td><td>最省心，可等你看完</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout" style="margin-top:14px">
+        <strong>别骑电瓶车。</strong>27 公里山路，后半段村道窄、无护栏，出发时天还没亮。打车或包车。山路蜿蜒，新手司机慎行；旺季可能要换乘接驳车。
+      </div>
+    </div>
+    <div class="card">
+      <h3>备选：相公山</h3>
+      <p class="lede">若更想要经典的日出云海，<strong>相公山</strong>是传统日出机位，距千里江山图约 10 公里，海拔 230 米，收费。西街拼车 <span class="num">50/人</span>往返；两处一起包车 <span class="num">260</span> 起。葡萄镇的民宿距相公山 14km、距夕阳山观景台 5km。</p>
+    </div>
+    <div class="card">
+      <h3>带上这些</h3>
+      <p class="lede">三脚架、广角或长焦、薄外套、防滑鞋、手电筒、驱蚊液。山上小卖部可充电（约 5 元/次），电动车停车约 2 元。</p>
+    </div>
+  </section>
+
+  <section id="ref">
+    <div class="sec-h"><h2>实用信息</h2></div>
+    <div class="card">
+      <h3>三天天气</h3>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>日期</th><th>气温</th><th>预报</th></tr></thead>
+          <tbody>
+            <tr><td class="num">10/16 周五</td><td class="p">22–33℃</td><td>少云转多云，上午可能短时阵雨</td></tr>
+            <tr><td class="num">10/17 周六</td><td class="p">22–29℃</td><td><span class="warn">上午局部雷雨</span>，风稍大</td></tr>
+            <tr><td class="num">10/18 周日</td><td class="p">21–32℃</td><td>少云，可能阵雨</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="lede" style="margin-top:12px">实时湿度 94%，体感偏高。各平台对 16 日的描述从「少云」到「小雨」不一，出门前看下最新预报。</p>
+    </div>
+    <div class="card">
+      <h3>电话</h3>
+      <ul class="facts">
+        <li><span class="k">金龙巡游</span><span class="v num">0773-8881177</span></li>
+        <li><span class="k">夜游咨询</span><span class="v num">0773-8881177</span></li>
+      </ul>
+    </div>
+    <div class="callout ok" style="margin-top:14px">
+      <strong>一条风险。</strong>10/17 上午的雷雨是唯一可能打断竹筏漂流的天气。竹筏票已买的话，当天早上再确认一次是否发船；能改期就往后挪。
+    </div>
+  </section>
+
+  <footer>
+    阳朔 · 2026.10.16–10.18<br>
+    天气与票价来自公开信息，出行前请以官方最新公告为准。
+  </footer>
+</div>
+
+<script>
+(function () {
+  var tasks = document.querySelectorAll('.task input[type="checkbox"]');
+  var KEY = 'yangshuo-tasks-v1';
+  function load() {
+    try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { return {}; }
+  }
+  function save(state) {
+    try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {}
+  }
+  var state = load();
+  tasks.forEach(function (el) {
+    if (state[el.id]) { el.checked = true; }
+    el.addEventListener('change', function () {
+      state[el.id] = el.checked;
+      save(state);
+    });
+  });
+})();
+</script>
