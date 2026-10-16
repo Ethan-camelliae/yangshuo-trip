@@ -11,8 +11,8 @@
   --ground:#EFF3F0; --surface:#FFFFFF; --surface-2:#F7FAF8;
   --ink:#16262A; --ink-2:#4A6167; --ink-3:#7B9095;
   --rule:#D2DCD7; --rule-2:#E6ECE8;
-  --azurite:#1C5F76; --malachite:#4F8A5C; --ochre:#A85B2E;
-  --azurite-soft:#DCEAF0; --malachite-soft:#E2EFE4; --ochre-soft:#F7E8DC;
+  --azurite:#1C5F76; --malachite:#4F8A5C; --ochre:#A85B2E; --crimson:#9C3B2E;
+  --azurite-soft:#DCEAF0; --malachite-soft:#E2EFE4; --ochre-soft:#F7E8DC; --crimson-soft:#F7E1DC;
   --shadow:0 1px 2px rgba(22,38,42,.05), 0 10px 28px -20px rgba(22,38,42,.45);
   color-scheme: light;
 }
@@ -22,8 +22,8 @@
     --ground:#0D1618; --surface:#141F21; --surface-2:#182427;
     --ink:#E6EDEA; --ink-2:#A9BCBC; --ink-3:#7A8F92;
     --rule:#2A3A3C; --rule-2:#1F2E30;
-    --azurite:#74BDD1; --malachite:#8CC28F; --ochre:#E09A66;
-    --azurite-soft:#12313A; --malachite-soft:#162C1B; --ochre-soft:#33231A;
+    --azurite:#74BDD1; --malachite:#8CC28F; --ochre:#E09A66; --crimson:#E88C7D;
+    --azurite-soft:#12313A; --malachite-soft:#162C1B; --ochre-soft:#33231A; --crimson-soft:#351D18;
     --shadow:0 1px 2px rgba(0,0,0,.5), 0 10px 28px -20px rgba(0,0,0,.9);
   }
 }
@@ -32,8 +32,8 @@
   --ground:#0D1618; --surface:#141F21; --surface-2:#182427;
   --ink:#E6EDEA; --ink-2:#A9BCBC; --ink-3:#7A8F92;
   --rule:#2A3A3C; --rule-2:#1F2E30;
-  --azurite:#74BDD1; --malachite:#8CC28F; --ochre:#E09A66;
-  --azurite-soft:#12313A; --malachite-soft:#162C1B; --ochre-soft:#33231A;
+  --azurite:#74BDD1; --malachite:#8CC28F; --ochre:#E09A66; --crimson:#E88C7D;
+  --azurite-soft:#12313A; --malachite-soft:#162C1B; --ochre-soft:#33231A; --crimson-soft:#351D18;
   --shadow:0 1px 2px rgba(0,0,0,.5), 0 10px 28px -20px rgba(0,0,0,.9);
 }
 
@@ -47,31 +47,17 @@ body{
 h1,h2,h3{font-family:"Noto Serif SC",Georgia,"Songti SC",serif; text-wrap:balance; margin:0; letter-spacing:.02em}
 p{margin:0}
 a{color:var(--azurite)}
-a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{
-  outline:2px solid var(--azurite); outline-offset:2px; border-radius:3px;
-}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--azurite); outline-offset:2px; border-radius:3px}
 .num{font-variant-numeric:tabular-nums}
 
 /* ── 题头 ── */
 .cover{padding-block:44px 30px; border-bottom:1px solid var(--rule)}
-.eyebrow{
-  font-size:.8125rem; letter-spacing:.16em; color:var(--ink-3);
-  text-transform:uppercase; font-variant-numeric:tabular-nums;
-}
-.cover h1{
-  font-size:clamp(2.6rem,13vw,3.6rem); font-weight:700;
-  letter-spacing:.14em; line-height:1.1; margin-block:18px 10px;
-}
+.eyebrow{font-size:.8125rem; letter-spacing:.16em; color:var(--ink-3); font-variant-numeric:tabular-nums}
+.cover h1{font-size:clamp(2.6rem,13vw,3.6rem); font-weight:700; letter-spacing:.14em; line-height:1.1; margin-block:18px 10px}
 .cover .sub{color:var(--ink-2); font-size:.9375rem; letter-spacing:.06em}
 .sunbar{margin-top:26px}
-.sunbar-track{
-  height:5px; border-radius:3px;
-  background:linear-gradient(90deg,var(--ochre),var(--azurite) 52%,var(--ochre));
-}
-.sunbar-ends{
-  display:flex; justify-content:space-between; margin-top:9px;
-  font-size:.8125rem; color:var(--ink-2); font-variant-numeric:tabular-nums;
-}
+.sunbar-track{height:5px; border-radius:3px; background:linear-gradient(90deg,var(--ochre),var(--azurite) 52%,var(--ochre))}
+.sunbar-ends{display:flex; justify-content:space-between; margin-top:9px; font-size:.8125rem; color:var(--ink-2); font-variant-numeric:tabular-nums}
 
 /* ── 导航 ── */
 .nav{
@@ -82,12 +68,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{
   backdrop-filter:blur(10px); border-bottom:1px solid var(--rule-2);
 }
 .nav::-webkit-scrollbar{display:none}
-.nav a{
-  flex:0 0 auto; padding:5px 12px; border-radius:999px;
-  font-size:.8125rem; text-decoration:none; color:var(--ink-2);
-  border:1px solid var(--rule); white-space:nowrap;
-}
-.nav a:hover{color:var(--azurite); border-color:var(--azurite)}
+.nav a{flex:0 0 auto; padding:5px 12px; border-radius:999px; font-size:.8125rem; text-decoration:none; color:var(--ink-2); border:1px solid var(--rule); white-space:nowrap}
+.nav a:hover,a:focus-visible{color:var(--azurite); border-color:var(--azurite)}
 
 /* ── 区块 ── */
 section{padding-block:34px; border-bottom:1px solid var(--rule-2)}
@@ -95,26 +77,20 @@ section:last-of-type{border-bottom:0}
 .sec-h{display:flex; align-items:baseline; gap:10px; margin-bottom:20px; flex-wrap:wrap}
 .sec-h h2{font-size:1.25rem; font-weight:700; letter-spacing:.08em}
 .sec-h .tag{font-size:.75rem; color:var(--ink-3); letter-spacing:.1em}
+article.day{scroll-margin-top:64px}
+section[id]{scroll-margin-top:64px}
 
 /* ── 待办 ── */
 .todo{background:var(--surface); border:1px solid var(--rule); border-radius:12px; box-shadow:var(--shadow); overflow:hidden}
 .task{display:flex; gap:12px; align-items:flex-start; padding:14px 16px; border-bottom:1px solid var(--rule-2); cursor:pointer}
 .task:last-child{border-bottom:0}
-.task input{
-  appearance:none; -webkit-appearance:none; flex:0 0 auto;
-  width:19px; height:19px; margin:4px 0 0; border:1.5px solid var(--ink-3);
-  border-radius:5px; background:transparent; cursor:pointer; position:relative;
-}
+.task input{appearance:none; -webkit-appearance:none; flex:0 0 auto; width:19px; height:19px; margin:4px 0 0; border:1.5px solid var(--ink-3); border-radius:5px; background:transparent; cursor:pointer; position:relative}
 .task input:checked{background:var(--azurite); border-color:var(--azurite)}
-.task input:checked::after{
-  content:""; position:absolute; left:5.5px; top:2px; width:5px; height:9px;
-  border:solid var(--ground); border-width:0 2px 2px 0; transform:rotate(45deg);
-}
+.task input:checked::after{content:""; position:absolute; left:5.5px; top:2px; width:5px; height:9px; border:solid var(--ground); border-width:0 2px 2px 0; transform:rotate(45deg)}
+.task > div{flex:1; min-width:0}
+.task-t{position:relative; display:inline-block; font-weight:500}
 .task:has(input:checked) .task-t{color:var(--ink-3)}
 .task:has(input:checked) .task-t::after{content:""; position:absolute; left:0; right:0; top:50%; border-top:1px solid var(--ink-3)}
-.task-t{position:relative; display:inline-block}
-.task > div{flex:1; min-width:0}
-.task-t{font-weight:500}
 .task-n{display:block; font-size:.8125rem; color:var(--ink-2); line-height:1.6; margin-top:3px}
 .due{color:var(--ochre); font-weight:500}
 
@@ -124,32 +100,22 @@ section:last-of-type{border-bottom:0}
 .day-head{display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; margin-bottom:4px}
 .day-num{font-family:"Noto Serif SC",serif; font-size:1.5rem; font-weight:700; letter-spacing:.1em}
 .day-date{font-size:.875rem; color:var(--ink-2); font-variant-numeric:tabular-nums; letter-spacing:.06em}
-.wx{
-  display:inline-flex; align-items:center; gap:7px; margin-bottom:18px;
-  font-size:.8125rem; color:var(--ink-2); background:var(--surface-2);
-  border:1px solid var(--rule-2); border-radius:7px; padding:5px 11px;
-  font-variant-numeric:tabular-nums; line-height:1.5;
-}
+.wx{display:inline-flex; align-items:center; gap:7px; margin-bottom:18px; font-size:.8125rem; color:var(--ink-2); background:var(--surface-2); border:1px solid var(--rule-2); border-radius:7px; padding:5px 11px; font-variant-numeric:tabular-nums; line-height:1.5}
 .wx::before{content:""; width:7px; height:7px; border-radius:50%; background:var(--azurite); flex:0 0 auto}
 .wx.rain::before{background:var(--ochre)}
 
 .slots{list-style:none; margin:0; padding:0; position:relative}
 .slots::before{content:""; position:absolute; left:52px; top:6px; bottom:6px; width:1px; background:var(--rule)}
 .slot{display:grid; grid-template-columns:52px 1fr; gap:0 20px; padding-block:11px}
-.slot-label{
-  font-size:.8125rem; color:var(--ink-3); letter-spacing:.06em;
-  text-align:right; padding-top:2px; font-variant-numeric:tabular-nums;
-}
+.slot-label{font-size:.8125rem; color:var(--ink-3); letter-spacing:.06em; text-align:right; padding-top:2px; font-variant-numeric:tabular-nums}
 .slot-body{position:relative; padding-left:20px}
-.slot-body::before{
-  content:""; position:absolute; left:-4.5px; top:11px; width:8px; height:8px;
-  border-radius:50%; background:var(--ground); border:1.5px solid var(--azurite); box-sizing:border-box;
-}
+.slot-body::before{content:""; position:absolute; left:-4.5px; top:11px; width:8px; height:8px; border-radius:50%; background:var(--ground); border:1.5px solid var(--azurite); box-sizing:border-box}
 .slot-t{font-weight:500}
 .slot-n{font-size:.8125rem; color:var(--ink-2); line-height:1.65; margin-top:3px}
 .warn{color:var(--ochre)}
+.crit{color:var(--crimson); font-weight:500}
 
-/* ── 通用卡片 / 表 ── */
+/* ── 卡片 / 表 ── */
 .card{background:var(--surface); border:1px solid var(--rule); border-radius:12px; padding:18px; box-shadow:var(--shadow)}
 .card + .card{margin-top:14px}
 .card h3{font-size:1rem; letter-spacing:.06em; margin-bottom:10px}
@@ -161,25 +127,17 @@ section:last-of-type{border-bottom:0}
 
 .tbl-wrap{overflow-x:auto; margin-top:14px; border:1px solid var(--rule-2); border-radius:9px}
 table{border-collapse:collapse; width:100%; font-size:.875rem; min-width:340px}
-th,td{text-align:left; padding:9px 13px; border-bottom:1px solid var(--rule-2)}
+th,td{text-align:left; padding:9px 13px; border-bottom:1px solid var(--rule-2); vertical-align:top}
 th{font-size:.75rem; color:var(--ink-3); letter-spacing:.08em; font-weight:500; background:var(--surface-2)}
 tr:last-child td{border-bottom:0}
 td.p{font-variant-numeric:tabular-nums; white-space:nowrap; font-weight:500}
 td.p.free{color:var(--malachite)}
 td.p.hot{color:var(--ochre)}
 
-.callout{
-  border-left:2px solid var(--ochre); background:var(--ochre-soft);
-  padding:12px 15px; border-radius:0 8px 8px 0; font-size:.875rem; margin-top:14px;
-  line-height:1.7;
-}
+.callout{border-left:2px solid var(--ochre); background:var(--ochre-soft); padding:12px 15px; border-radius:0 8px 8px 0; font-size:.875rem; margin-top:14px; line-height:1.7}
 .callout.ok{border-left-color:var(--malachite); background:var(--malachite-soft)}
+.callout.alert{border-left-color:var(--crimson); background:var(--crimson-soft)}
 .callout strong{font-weight:700}
-.pill{
-  display:inline-block; font-size:.75rem; letter-spacing:.06em; padding:2px 9px;
-  border-radius:999px; background:var(--azurite-soft); color:var(--azurite);
-  font-variant-numeric:tabular-nums; font-weight:500;
-}
 footer{padding-block:30px 0; color:var(--ink-3); font-size:.8125rem; line-height:1.8; text-align:center}
 @media (max-width:420px){
   .facts li{grid-template-columns:1fr; gap:2px}
@@ -195,7 +153,7 @@ footer{padding-block:30px 0; color:var(--ink-3); font-size:.8125rem; line-height
 <div class="page">
 
   <header class="cover">
-    <p class="eyebrow num">2026.10.16 — 10.18 · 两人同行</p>
+    <p class="eyebrow num">2026.10.16 — 10.18 · 两人同行 · 自驾</p>
     <h1>阳朔三日</h1>
     <p class="sub">遇龙河 · 漓江 · 葡萄峰林</p>
     <div class="sunbar">
@@ -212,28 +170,33 @@ footer{padding-block:30px 0; color:var(--ink-3); font-size:.8125rem; line-height
     <a href="#d1">10.16</a>
     <a href="#d2">10.17</a>
     <a href="#d3">10.18</a>
+    <a href="#parking">停车</a>
     <a href="#stay">住宿</a>
-    <a href="#peak">葡萄峰林</a>
     <a href="#ref">实用信息</a>
   </nav>
 
   <section id="todo">
     <div class="sec-h"><h2>出发前待办</h2><span class="tag">点一下勾掉</span></div>
+
+    <div class="callout alert" style="margin-top:0; margin-bottom:16px">
+      <strong>最要紧的一件事：确认还车时间。</strong>你计划 10/18 的 <span class="num">18:00</span> 在十里画廊还车，但那里到阳朔站要 <strong>约 1 小时</strong>，而 D1899 是 <span class="num">19:23</span> 发车——<strong>赶不上</strong>。而且阳朔到珠海当天基本只有这一趟。打电话问神州：<strong>能不能提前到 16:30–17:00 还，或者改在阳朔站/兴坪还车。</strong>
+    </div>
+
     <div class="todo">
-      <label class="task"><input type="checkbox" id="t1"><div><span class="task-t">漓江竹筏漂流票</span><span class="task-n">提早买票。有不同路线可选，<strong>可以选不湿身</strong>的。</span></div></label>
-      <label class="task"><input type="checkbox" id="t2"><div><span class="task-t">荒野厘饭（漂亮饭）预订</span><span class="task-n">需提前预定，这是 10/17 晚上的安排。</span></div></label>
-      <label class="task"><input type="checkbox" id="t3"><div><span class="task-t">约 10/18 看日出的车</span><span class="task-n">前一晚跟司机定好 <span class="due">05:15 出发</span>，<strong>留下电话</strong>。酒店在白沙镇，比县城离葡萄峰林近。</span></div></label>
-      <label class="task"><input type="checkbox" id="t4"><div><span class="task-t">约 10/18 傍晚去阳朔站的车</span><span class="task-n">酒店到阳朔站 <span class="due">40 公里、约 1 小时</span>。车 19:23 发，<strong>17:30 前必须出发</strong>。</span></div></label>
-      <label class="task"><input type="checkbox" id="t5"><div><span class="task-t">随身带</span><span class="task-n">薄外套（河边风大）、驱蚊液（夜河蚊虫多）、雨衣、充电宝。</span></div></label>
+      <label class="task"><input type="checkbox" id="t1"><div><span class="task-t">确认神州租车还车时间与地点</span><span class="task-n">这是唯一可能导致赶不上高铁的事。<span class="due">优先办</span>。</span></div></label>
+      <label class="task"><input type="checkbox" id="t2"><div><span class="task-t">遇龙河竹筏票（夏棠 → 骥马）</span><span class="task-n"><span class="due">前一晚 20:00</span> 小程序「遇龙河」或「i游阳朔」放次日票，<strong>需提前录入乘船人身份信息</strong>。线上没抢到可当天早上去码头窗口。</span></div></label>
+      <label class="task"><input type="checkbox" id="t3"><div><span class="task-t">生日餐厅预订</span><span class="task-n">还没定，暂定<strong>荒野厘饭</strong>。定下来告诉我，我改。</span></div></label>
+      <label class="task"><input type="checkbox" id="t4"><div><span class="task-t">叁山 peaks 订生日蛋糕</span><span class="task-n">阳朔县兰花巷 5 巷 1 号。</span></div></label>
+      <label class="task"><input type="checkbox" id="t5"><div><span class="task-t">随身带</span><span class="task-n"><strong>身份证</strong>（竹筏实名制）、薄外套、驱蚊液、雨衣、充电宝、<strong>手电筒</strong>（馒头寨溶洞用）、防滑鞋。</span></div></label>
     </div>
   </section>
 
-  <section id="d1">
+  <section id="days">
     <div class="sec-h"><h2>三日行程</h2></div>
 
-    <article class="day">
+    <article class="day" id="d1">
       <div class="day-head"><span class="day-num">第一日</span><span class="day-date num">10.16 周五</span></div>
-      <p class="wx rain">22–33℃ · 少云转多云，上午可能短时阵雨，风小</p>
+      <p class="wx rain">21–31℃ · 多云，上午可能短时阵雨 · 体感 31℃、湿度 72%</p>
       <ul class="slots">
         <li class="slot"><span class="slot-label">09:07</span><div class="slot-body">
           <p class="slot-t">珠海站发车 · G3792</p>
@@ -241,69 +204,83 @@ footer{padding-block:30px 0; color:var(--ink-3); font-size:.8125rem; line-height
         </div></li>
         <li class="slot"><span class="slot-label">12:16</span><div class="slot-body">
           <p class="slot-t">抵达阳朔站</p>
-          <p class="slot-n"><span class="warn">是中午，不是上午。</span>阳朔站在<strong>兴坪镇</strong>，不在县城。到酒店约 40 公里、1 小时车程——高铁专线大巴 20 元/人 到县城再换车，或直接打车/网约车。</p>
+          <p class="slot-n"><span class="warn">是中午，不是上午。</span>阳朔站在<strong>兴坪镇</strong>，不在县城。到酒店约 40 公里、1 小时车程。</p>
         </div></li>
         <li class="slot"><span class="slot-label">13:30</span><div class="slot-body">
           <p class="slot-t">到酒店放行李</p>
-          <p class="slot-n">自由鸟·觅野度假山舍，白沙镇旧县村，遇龙河畔。</p>
+          <p class="slot-n">自由鸟·觅野度假山舍，白沙镇旧县村，遇龙河畔。免费停车。</p>
         </div></li>
         <li class="slot"><span class="slot-label">下午</span><div class="slot-body">
-          <p class="slot-t">遇龙河兜风</p>
-          <p class="slot-n">酒店就在遇龙河边（步行 5 分钟到夏棠寨码头），租电瓶车沿河骑行最顺。<span class="warn">河边风大，注意保暖。</span>十里画廊在县城以南，离酒店较远，看时间决定去不去，别硬赶。</p>
+          <p class="slot-t">遇龙河兜风 · 租电动车</p>
+          <p class="slot-n">这时还没取车，<strong>租电动车</strong>最合适——酒店就在遇龙河边，步行 5 分钟到夏棠寨码头。<span class="warn">河边风大，注意保暖。</span>十里画廊在县城以南，看时间决定去不去，别硬赶。</p>
+        </div></li>
+        <li class="slot"><span class="slot-label">18:00</span><div class="slot-body">
+          <p class="slot-t">神州租车十里画廊店 · 取车</p>
+          <p class="slot-n">在十里画廊一带（阳朔县城以南）。<span class="warn">注意：我在公开渠道没查到"十里画廊店"这个门店，以你的订单为准。</span>取完车开去西街约 15 分钟。</p>
         </div></li>
         <li class="slot"><span class="slot-label">晚上</span><div class="slot-body">
           <p class="slot-t">西街</p>
-          <p class="slot-n">距酒店约 15 分钟车程。买纪念品，吃点东西。</p>
+          <p class="slot-n">买纪念品、吃点东西。<span class="warn">西街是步行街，车开不进去</span>，停外围步行进入。停车方案见「停车指南」。</p>
         </div></li>
       </ul>
     </article>
 
-    <article class="day">
+    <article class="day" id="d2">
       <div class="day-head"><span class="day-num">第二日</span><span class="day-date num">10.17 周六</span></div>
-      <p class="wx rain">22–29℃ · 上午局部雷雨，风稍大</p>
+      <p class="wx rain">23–32℃ · <span class="warn">有雨</span>，上午局部雷雨，风稍大</p>
       <ul class="slots">
-        <li class="slot"><span class="slot-label">07:00</span><div class="slot-body">
-          <p class="slot-t">出发去兴坪 · 漓江竹筏漂流</p>
-          <p class="slot-n"><span class="warn">酒店在旧县村，到兴坪约 34 公里、1 小时车程</span>，是这三天最长的一段路。想赶早场竹筏就得 7 点前出门。提早买票，可选不湿身路线；上午的雷雨是唯一会打断它的东西，带雨衣。</p>
+        <li class="slot"><span class="slot-label">早上</span><div class="slot-body">
+          <p class="slot-t">遇龙河竹筏 · 夏棠 → 骥马</p>
+          <p class="slot-n">夏棠码头步行 5 分钟就到，<strong>夏棠村有免费公共停车场</strong>。双人单程 3 公里、约 40 分钟、<span class="num">200 元/筏</span>，冲 4 个坝。<br>或者把车停在终点骥马，坐接驳车（约 10 元/人）回夏棠再漂回来取车。<span class="warn">冲坝会溅水，带防水袋。</span></p>
         </div></li>
         <li class="slot"><span class="slot-label">下午</span><div class="slot-body">
-          <p class="slot-t">漓江 20 元景区</p>
-          <p class="slot-n">就在兴坪，景区免费。走走逛逛，拍那张 20 元背面的同款山水。今天不用赶时间，慢慢待。</p>
+          <p class="slot-t">兴坪 · 20 元景区</p>
+          <p class="slot-n">骥马 → 兴坪约 33 公里、1 小时车程。<strong>车停朝板山初级中学附近</strong>（私人停车场 20–30 元/天，步行 2–3 分钟到码头）。<span class="warn">朝板山码头本身没有停车位，别硬开过去，有监控抓拍。</span></p>
+          <p class="slot-n" style="margin-top:8px">竹筏走<strong>朝板山 ⇄ 九马画山</strong>，约 1 小时、140 元/人，途经 20 元背景与九马画山。<span class="warn">实名制购票要带身份证，取票在兴坪镇上的「漓江排筏售票大厅」，不能在码头取。</span></p>
+          <p class="slot-n" style="margin-top:8px">不想坐筏也行：从兴坪古镇过桥步行约 10 分钟，<strong>第三个观景台才是真正的 20 元取景地</strong>，免费。</p>
         </div></li>
         <li class="slot"><span class="slot-label">晚上</span><div class="slot-body">
-          <p class="slot-t">荒野厘饭（漂亮饭）</p>
-          <p class="slot-n">需提前预定。兴坪回县城约 25 公里、40 分钟，吃完再回酒店 15 分钟。时间宽裕，不用掐着点。</p>
+          <p class="slot-t">生日晚餐 · 待定</p>
+          <p class="slot-n">暂定<strong>荒野厘饭</strong>（需提前预定）。兴坪回县城约 25 公里、40 分钟。<strong>蛋糕在叁山 peaks</strong>（兰花巷 5 巷 1 号），顺路取。</p>
         </div></li>
       </ul>
     </article>
 
-    <article class="day">
+    <article class="day" id="d3">
       <div class="day-head"><span class="day-num">第三日</span><span class="day-date num">10.18 周日</span></div>
-      <p class="wx rain">21–32℃ · 预报分歧大：中央气象台给小雨，墨迹给少云。看日出前一晚再确认一次</p>
+      <p class="wx rain">22–31℃ · <span class="warn">有雨</span>，上午几场阵雨</p>
       <ul class="slots">
         <li class="slot"><span class="slot-label">05:15</span><div class="slot-body">
-          <p class="slot-t">出发去葡萄峰林</p>
-          <p class="slot-n">从酒店（白沙镇）出发比从西街近，约 20 公里、30 分钟（估算）。<span class="warn">6:00 前登顶</span>才赶得上日出。别骑电瓶车，打车或包车。</p>
+          <p class="slot-t">出发去葡萄峰林 · 馒头寨</p>
+          <p class="slot-n">这时有车了，从酒店（白沙镇）出发约 20 公里、30 分钟（估算）。导航搜「<strong>忙头寨</strong>」或「馒头寨」，进村跟红色箭头。</p>
         </div></li>
         <li class="slot"><span class="slot-label">06:00–08:00</span><div class="slot-body">
-          <p class="slot-t">千里江山图观景台 · 日出与云海</p>
-          <p class="slot-n">日出 06:37。这是当天的黄金档：日出加晨雾。8:30 下山。</p>
+          <p class="slot-t">馒头寨观景台 → 千里江山图观景台</p>
+          <p class="slot-n">日出 06:37。<span class="warn">注意：馒头寨是未开发的地方，要穿约 50 米溶洞（需手电、石阶湿滑）、走悬崖栈道，部分路段无防护。多篇攻略说它更适合日落，看日出一般去相公山。</span>雨天别去。</p>
+        </div></li>
+        <li class="slot"><span class="slot-label">08:30</span><div class="slot-body">
+          <p class="slot-t">下山 · 转千里江山图观景台</p>
+          <p class="slot-n">葡萄镇杨梅岭村，观景台下方有简易停车场（约 20 元），步行约 10 分钟登顶，360° 俯瞰喀斯特峰林。8:30 下山，回酒店约 30 分钟。</p>
         </div></li>
         <li class="slot"><span class="slot-label">上午</span><div class="slot-body">
           <p class="slot-t">回酒店 · 早午饭 · 拍照</p>
-          <p class="slot-n">约 9:30 回到酒店。这半天就是用来慢下来的。</p>
+          <p class="slot-n">这半天就是用来慢下来的。</p>
         </div></li>
         <li class="slot"><span class="slot-label">14:00</span><div class="slot-body">
           <p class="slot-t">退房</p>
-          <p class="slot-n">行李寄存在酒店，下午轻松逛。</p>
+          <p class="slot-n">行李放车上。</p>
         </div></li>
         <li class="slot"><span class="slot-label">下午</span><div class="slot-body">
           <p class="slot-t">咖啡馆拍照 · 买特产</p>
           <p class="slot-n">买些能带上高铁的特色吃食。</p>
         </div></li>
+        <li class="slot"><span class="slot-label">16:30–17:00</span><div class="slot-body">
+          <p class="slot-t">还车（建议提前）</p>
+          <p class="slot-n"><span class="crit">这是全程最紧的一环。</span>你原定 18:00 还，但十里画廊到阳朔站要 1 小时，19:23 发车根本来不及。<strong>务必打电话改成 16:30–17:00 还，或改在阳朔站/兴坪还车。</strong></p>
+        </div></li>
         <li class="slot"><span class="slot-label">17:30</span><div class="slot-body">
-          <p class="slot-t">出发去阳朔站</p>
-          <p class="slot-n"><span class="warn">酒店到站 40 公里、约 1 小时</span>，回兴坪方向。这是全程最不能迟到的一段——高铁不等人。宁可早到。</p>
+          <p class="slot-t">前往阳朔站</p>
+          <p class="slot-n">打车或高铁专线大巴（<span class="num">20 元/人</span>）。宁可早到。</p>
         </div></li>
         <li class="slot"><span class="slot-label">19:23</span><div class="slot-body">
           <p class="slot-t">阳朔站发车 · D1899</p>
@@ -313,60 +290,49 @@ footer{padding-block:30px 0; color:var(--ink-3); font-size:.8125rem; line-height
     </article>
   </section>
 
+  <section id="parking">
+    <div class="sec-h"><h2>停车指南</h2><span class="tag">尽量省</span></div>
+    <div class="callout" style="margin-top:0">
+      <strong>先说结论：真正免费的地方只有两个</strong>——你们的酒店，和夏棠村的公共停车场。西街、朝板山、千里江山图都要花钱。下面是每一处的具体落点。
+    </div>
+    <div class="card" style="margin-top:14px">
+      <div class="tbl-wrap" style="margin-top:0">
+        <table>
+          <thead><tr><th>地点</th><th>停哪</th><th>费用</th></tr></thead>
+          <tbody>
+            <tr><td>酒店</td><td>自由鸟自带免费停车场</td><td class="p free">免费</td></tr>
+            <tr><td>夏棠码头</td><td>夏棠村公共停车场</td><td class="p free">免费</td></tr>
+            <tr><td>骥马码头</td><td>停骥马，坐接驳车回夏棠取车</td><td class="p">接驳 10/人</td></tr>
+            <tr><td>西街</td><td>益田西街地下停车场（距约 80 米，容量大）<br>或城中城地下停车场（叠翠路 33 号，距约 79 米）</td><td class="p">5/小时<br>全天封顶 40</td></tr>
+            <tr><td>西街（想再省）</td><td>阳朔中心广场停车场（蟠桃路 7-8 号）</td><td class="p">30 分钟内免费<br>1 小时 5 元，全天 40</td></tr>
+            <tr><td>朝板山 · 20 元景区</td><td><strong>朝板山初级中学</strong>附近私人停车场，步行 2–3 分钟到码头<br>码头本身无车位，别硬开</td><td class="p hot">20–30/天</td></tr>
+            <tr><td>千里江山图观景台</td><td>观景台下方简易停车场</td><td class="p hot">约 20</td></tr>
+            <tr><td>馒头寨</td><td>进村跟红色箭头，村内空地停放</td><td class="p">未查到</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="lede" style="margin-top:12px">西街是<strong>步行街，机动车禁止驶入</strong>，一律停外围步行进去。旺季车位紧张，早到。</p>
+    </div>
+    <div class="callout">
+      <strong>一个省钱技巧：</strong>西街和朝板山这两处如果只是短暂停留，注意看停车场的计费规则——中心广场 <strong>30 分钟内免费</strong>，短停能省一笔。
+    </div>
+  </section>
+
   <section id="stay">
     <div class="sec-h"><h2>住宿</h2><span class="tag">白沙镇 · 遇龙河畔</span></div>
     <div class="card">
       <h3>自由鸟 · 觅野度假山舍</h3>
-      <p class="lede">全称「自由鸟·觅野度假山舍（阳朔遇龙河景区旧县码头店）」，2025 年开业，约 48 间客房，免费停车。</p>
+      <p class="lede">全称「自由鸟·觅野度假山舍（阳朔遇龙河景区旧县码头店）」，2025 年开业，约 48 间客房，<strong>免费停车</strong>。</p>
       <ul class="facts">
         <li><span class="k">地址</span><span class="v">阳朔县白沙镇旧县村委大石寨村 83-1 号</span></li>
         <li><span class="k">位置</span><span class="v">遇龙河畔，背靠凤冠山，临近旧县码头</span></li>
         <li><span class="k">步行</span><span class="v">约 5 分钟到夏棠寨码头，8–10 分钟到旧县综合码头</span></li>
         <li><span class="k">到西街</span><span class="v">约 15 分钟车程</span></li>
-        <li><span class="k">到阳朔站</span><span class="v"><span class="warn">约 40 公里 / 60 分钟</span></span></li>
+        <li><span class="k">到阳朔站</span><span class="v">约 40 公里 / 60 分钟</span></li>
       </ul>
     </div>
     <div class="callout ok">
-      <strong>酒店位置其实是好事。</strong>它不在县城，所以避开了西街的吵。而且它就在遇龙河边——第一天的骑行、第三天的清晨，都不用奔波。代价是每天出门都要算车程，尤其是赶高铁那天。
-    </div>
-  </section>
-
-  <section id="peak">
-    <div class="sec-h"><h2>葡萄峰林</h2><span class="tag">10/18 日出</span></div>
-    <p class="lede">千里江山图观景台，在葡萄镇杨梅岭村。看完日出再去别处是来不及的——<strong>晨雾的黄金档 6:00–8:00 就在这里</strong>，你在别处看完再赶过去，雾已经散了。所以就在这儿看。</p>
-    <div class="card" style="margin-top:14px">
-      <h3>要点</h3>
-      <ul class="facts">
-        <li><span class="k">门票</span><span class="v">免费 · 停车约 10 元</span></li>
-        <li><span class="k">距离</span><span class="v">从酒店（白沙镇）约 20 公里 / 30 分钟；从阳朔县城 27 公里 / 30 分钟，西街约 40 分钟</span></li>
-        <li><span class="k">登顶</span><span class="v">自驾可到山顶附近，步行 3–10 分钟</span></li>
-        <li><span class="k">黄金档</span><span class="v">6:00–8:00 云海晨雾，日出 06:37</span></li>
-        <li><span class="k">打法</span><span class="v">05:15 出发 → 6:00 前登顶 → 8:30 下山</span></li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>怎么去</h3>
-      <div class="tbl-wrap">
-        <table>
-          <thead><tr><th>方式</th><th>价格</th><th>说明</th></tr></thead>
-          <tbody>
-            <tr><td>西街拼车</td><td class="p">约 20/人</td><td>最省，前一晚约好</td></tr>
-            <tr><td>打车县城往返</td><td class="p">约 50</td><td>需和司机约返程</td></tr>
-            <tr><td>包车往返（5 座）</td><td class="p">180 起</td><td>最省心，可等你看完</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="callout" style="margin-top:14px">
-        <strong>别骑电瓶车。</strong>山路窄，后半段村道无护栏，出发时天还没亮。打车或包车。山路蜿蜒，新手司机慎行；旺季可能要换乘接驳车。
-      </div>
-    </div>
-    <div class="card">
-      <h3>备选：相公山</h3>
-      <p class="lede">若更想要经典的日出云海，<strong>相公山</strong>是传统日出机位，距千里江山图约 10 公里，海拔 230 米，收费。西街拼车 <span class="num">50/人</span>往返；两处一起包车 <span class="num">260</span> 起。</p>
-    </div>
-    <div class="card">
-      <h3>带上这些</h3>
-      <p class="lede">三脚架、广角或长焦、薄外套、防滑鞋、手电筒、驱蚊液。山上小卖部可充电（约 5 元/次）。</p>
+      <strong>酒店位置其实是好事。</strong>它不在县城，避开了西街的吵；就在遇龙河边，第二天的竹筏码头步行 5 分钟就到。代价是每天出门都要算车程，尤其是赶高铁那天。
     </div>
   </section>
 
@@ -378,13 +344,13 @@ footer{padding-block:30px 0; color:var(--ink-3); font-size:.8125rem; line-height
         <table>
           <thead><tr><th>日期</th><th>气温</th><th>预报</th></tr></thead>
           <tbody>
-            <tr><td class="num">10/16 周五</td><td class="p">22–33℃</td><td>少云转多云，上午可能短时阵雨</td></tr>
-            <tr><td class="num">10/17 周六</td><td class="p">22–29℃</td><td><span class="warn">上午局部雷雨</span>，风稍大</td></tr>
-            <tr><td class="num">10/18 周日</td><td class="p">21–32℃</td><td>中央气象台：<span class="warn">小雨</span>；墨迹：少云；天气网：小雨。分歧大</td></tr>
+            <tr><td class="num">10/16 周五</td><td class="p">21–31℃</td><td>多云，上午可能短时阵雨。体感 31℃、湿度 72%</td></tr>
+            <tr><td class="num">10/17 周六</td><td class="p">23–32℃</td><td><span class="warn">雨</span>，上午局部雷雨</td></tr>
+            <tr><td class="num">10/18 周日</td><td class="p">22–31℃</td><td><span class="warn">雨</span>，上午几场阵雨，之后部分转晴</td></tr>
           </tbody>
         </table>
       </div>
-      <p class="lede" style="margin-top:12px">各平台预报分歧不小：16 日从「少云」到「小雨」，18 日从「少云」到「小雨」。湿度 90% 以上，体感偏高。出门前以临近的官方预报为准。</p>
+      <p class="lede" style="margin-top:12px">中国天气网对三天都标了「雨」，AccuWeather 也是每天上午有阵雨。整体温热潮湿，最高 31–33℃。风力不大（2.2–4.6 m/s）。出门带伞。</p>
     </div>
     <div class="card">
       <h3>车次</h3>
@@ -392,12 +358,17 @@ footer{padding-block:30px 0; color:var(--ink-3); font-size:.8125rem; line-height
         <li><span class="k">去程</span><span class="v">G3792 · 珠海 09:07 → 阳朔 12:16 · 二等座 261</span></li>
         <li><span class="k">返程</span><span class="v">D1899 · 阳朔 19:23 → 珠海 22:56 · 二等座 234</span></li>
       </ul>
-      <p class="lede" style="margin-top:12px">时刻与票价以 12306 为准，出行前再核一次。</p>
+      <p class="lede" style="margin-top:12px">阳朔到珠海当天基本只有这一趟，时刻与票价以 12306 为准。</p>
     </div>
-    <div class="callout">
-      <strong>两个会打乱计划的风险，出发前各确认一次。</strong>
-      <br>① <strong>10/17 上午的雷雨</strong>可能让竹筏停发。票已买的话，当天早上问一次是否发船，能改期就往后挪。
-      <br>② <strong>10/18 清晨可能下雨</strong>（中央气象台给小雨），日出和云海会整个泡汤。前一晚看预报，不行就睡到自然醒，改为酒店慢享 + 咖啡馆，行程照样成立。
+    <div class="card">
+      <h3>竹筏实名制</h3>
+      <p class="lede">遇龙河和漓江竹筏都是<strong>实名制购票，必须带身份证</strong>。漓江竹筏取票在兴坪镇上的「漓江排筏售票大厅」（国民村镇银行对面），<strong>不能到码头取票</strong>。70 岁以上老人、90cm 以下儿童不能坐有冲坝的竹筏。</p>
+    </div>
+    <div class="callout alert">
+      <strong>三件会打乱计划的事。</strong>
+      <br>① <strong>还车与赶高铁冲突</strong>——最要紧，先打电话改时间。
+      <br>② <strong>10/17 上午的雷雨</strong>可能让竹筏停发。当天早上问一次，能改期就往后挪。
+      <br>③ <strong>10/18 清晨可能下雨</strong>，馒头寨是未开发的土路和悬崖栈道，<strong>雨天千万别去</strong>。不行就睡到自然醒，行程照样成立。
     </div>
   </section>
 
@@ -410,7 +381,7 @@ footer{padding-block:30px 0; color:var(--ink-3); font-size:.8125rem; line-height
 <script>
 (function () {
   var tasks = document.querySelectorAll('.task input[type="checkbox"]');
-  var KEY = 'yangshuo-tasks-v2';
+  var KEY = 'yangshuo-tasks-v3';
   function load() {
     try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { return {}; }
   }
